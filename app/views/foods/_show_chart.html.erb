@@ -1,0 +1,32 @@
+
+  <div class="large-5 columns">
+    <div class="panel">
+      <h3>Caloric Ratio</h3>
+      <canvas id="foodChart" width="300" height="300"></canvas>
+      <hr>
+      <div class="row">
+        <div class="large-6 large-offset-4 columns">
+          <span class="small subheader"><%= @food.ratio_fat %>% of calories from fats</span>
+        </div>
+        <div class="large-2 columns">
+          <div class="key fat"></div>
+        </div>
+        <div class="large-6 large-offset-4 columns">
+          <span class="small subheader">
+            <%= @food.ratio_protein %>% of calories from protein
+          </span>
+        </div>
+        <div class="large-2 columns">
+          <div class="key protein"></div>
+        </div>
+        <div class="large-6 large-offset-4 columns">
+          <span class="small subheader">
+            <%= @food.ratio_carb %>% of calories from carbs
+          </span>
+        </div>
+        <div class="large-2 columns">
+          <div class="key carb"></div>
+        </div>
+      </div>
+    </div>
+  </div>

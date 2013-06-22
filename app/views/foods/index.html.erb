@@ -1,0 +1,20 @@
+<div class="row">
+  <h1>Food List</h1>
+  <%= form_tag foods_path, method: :get, :id => "foods_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <div class="small-10 large-6 columns end">
+      <div class="row collapse">
+        <div class="small-8 columns">
+          <%= text_field_tag :query, params[:query] %>
+        </div>
+        <div class="small-4 columns">
+          <%= submit_tag "Search", name: nil, class: "button prefix" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div id="foods"><%= render 'foods/foods' %></div>
+</div>

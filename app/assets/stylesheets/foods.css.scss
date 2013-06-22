@@ -1,0 +1,47 @@
+$primary-color: #F27620;
+$px-dist: 5px;
+
+$red : #cd5c4d;
+$darkgrey: #292b30;
+
+.key-section {
+  padding: 10px 20px;
+}
+.key {
+  float: right;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  bottom: 4px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  &:before {
+    display: block;
+    background: #f00;
+    content: ' ';
+    border: 25px solid;
+    border-color: #aaa #aaa;
+    border-width: 0 25px 25px;
+  }
+}
+
+.fat {
+  &:before {
+    border-color: #F27620 #D75E0D;
+  }
+}
+.protein {
+  &:before {
+    border-color: #DE5200 #B24300;
+  }
+}
+.carb {
+  &:before {
+    border-color: #39393B #323234;
+  }
+}
+
+.small {
+  font-size: 0.8em;
+}

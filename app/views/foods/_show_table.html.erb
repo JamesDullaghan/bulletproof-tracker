@@ -1,0 +1,34 @@
+  <table>
+    <thead>
+      <tr>
+        <th>Food Category</th>
+        <th>Commitment Level</th>
+        <th>Serving Size</th>
+        <th>Calories</th>
+        <th>Total Fat</th>
+        <th>Saturated Fat</th>
+        <th>Cholesterol</th>
+        <th>Sodium</th>
+        <th>Total Carbohydrates</th>
+        <th>Fiber</th>
+        <th>Sugar</th>
+        <th>Protein</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @food.category.capitalize %></td>
+        <td><%= @food.commitment %></td>
+        <td><%= @food.serving %> (g)</td>
+        <td><%= @food.calories %></td>
+        <td><%= @food.total_fat %></td>
+        <td><%= @food.saturated_fat %></td>
+        <td><%= @food.cholesterol %></td>
+        <td><%= @food.sodium %></td>
+        <td><%= @food.total_carbohydrate %></td>
+        <td><%= @food.fiber %></td>
+        <td><%= @food.sugar %></td>
+        <td><%= @food.protein %></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,19 @@
+.top-bar {
+  .button {
+    height: 4em !important;
+    line-height: 4em !important;
+    padding: 0 40px !important;
+  }
+}
+
+.light {
+  color: white;
+}
+
+.menu-icon {
+  position: relative;
+  top: 8px;
+  right: 3px;
+  line-height: 0;
+  font-size: 2em;
+}

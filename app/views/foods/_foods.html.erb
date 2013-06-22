@@ -1,0 +1,27 @@
+  <table>
+    <thead>
+      <tr>
+        <th width="150"><%= sortable 'name' %> <span class="asc"></span></th>
+        <th width="150"><%= sortable 'category' %></th>
+        <th width="150"><%= sortable 'commitment' %></th>
+        <th width="150"><%= sortable 'serving' %></th>
+        <th width="150"><%= sortable 'calories' %></th>
+        <th width="150"><%= sortable 'total_fat' %></th>
+        <th width="150"><%= sortable 'protein' %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+      <tr>
+        <td><%= link_to food.name.capitalize, food_path(food) %></td>
+        <td><%= food.category.capitalize.pluralize %></td>
+        <td><%= food.commitment %></td>
+        <td><%= food.serving %></td>
+        <td><%= food.calories %></td>
+        <td><%= food.total_fat %></td>
+        <td><%= food.protein %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @foods %>

@@ -1,0 +1,33 @@
+<%= form_for (@sleep), :html => { :class => "custom" } do |f| %>
+  <% if @sleep.errors.any? %>
+    <h5><%= pluralize(@sleep.errors.count, "error") %> stopped this sleep from being recorded.</h5>
+    <ul>
+      <% @sleep.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="row collapse">
+    <div class="large-2 columns">
+      <%= f.label 'Sleep Date', :sleep_date %>
+    </div>
+    <div class="large-4 columns end">
+      <%= f.date_select(:sleep_date) %>
+    </div>
+  </div>
+
+  <div class="row collapse">
+    <div class="large-2 columns">
+      <%= f.label "Hours slept: ", :hours %>
+    </div>
+    <div class="large-4 columns end">
+      <%= f.text_field :hours %>
+    </div>
+  </div>
+  <div class="row collapse">
+    <div class="large-6 columns">
+      <%= f.submit 'Add Sleep', class: 'button radius right' %>
+    </div>
+  </div>
+<% end %>

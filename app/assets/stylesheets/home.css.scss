@@ -1,0 +1,84 @@
+@import 'foundation_and_overrides';
+
+.topBorder {
+  width: 33.33%;
+  float: left;
+  height: 8px;
+}
+
+.primary {
+  background-color: $primary-color;
+}
+
+.primary-light {
+  background-color: lighten($primary-color, 20%);
+}
+
+.primary-dark {
+  background-color: darken($primary-color, 10%);
+}
+
+.top-container {
+  width: 100%;
+  min-height: 200px;
+  background-image: url('dark_wall.png');
+  .cta-header {
+    margin: 60px 0px;
+    text-align: center;
+    font-weight: 100;
+  }
+}
+@media #{$large} {
+  .top-container {
+    min-height: 300px;
+    .cta-header {
+      margin: 90px 0px;
+      font-size: 4em;
+    }
+  }
+}
+
+.top-bar-section.has-form {
+  padding: 0px !important;
+}
+
+
+
+.home-icon {
+  position: absolute;
+  font-size: 128px;
+}
+.home-icon.first {
+  position: relative;
+  top: 80px;
+  color: #fff;
+}
+.home-icon.second {
+  position: relative;
+  top: 17px;
+  right: 35px;
+  color: #F27620;
+}
+
+.keypoint-collection {
+  margin: 15px 0px;
+  .keypoint {
+    padding: 30px 45px;
+  }
+}
+
+@media #{$large} {
+  .keypoint-collection {
+    margin: 55px 0;
+  }
+  .keypoint {
+    padding: 65px 45px;
+  }
+}
+
+.keypoint-border {
+  height: 2px;
+  background-color: $secondary-color;
+  width: 100%;
+  margin: 30px 0px;
+}
