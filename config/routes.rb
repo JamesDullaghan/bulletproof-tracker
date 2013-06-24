@@ -1,8 +1,9 @@
 ChartChallenge::Application.routes.draw do
 
-  devise_for :admin, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
-  devise_for :user, :path_names => { :sign_in => 'login', :sign_out => 'logout'},
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout'},
                      :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :admins, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
+
 
   match 'dashboard' => 'dashboard#index'
   resources :foods
