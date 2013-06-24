@@ -27,6 +27,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'will_paginate', '~> 3.0.1'
 gem 'pg_search'
+gem 'foundation_rails_helper'
 
 group :development do
   gem 'better_errors'

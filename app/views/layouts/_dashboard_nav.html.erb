@@ -1,0 +1,35 @@
+<div class="contain-to-grid sticky">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1><%= link_to 'Grassfed Tracker', root_path %></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li><%= link_to 'Dashboard', dashboard_url %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'Foods', foods_url %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'Sleep', sleeps_url %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'Excercise', root_path %></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Settings</a>
+          <ul class="dropdown">
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path %></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+</div>

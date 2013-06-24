@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include FoundationRailsHelper::FlashHelper
 
   def sortable(column, title = nil)
     title ||= column.titleize

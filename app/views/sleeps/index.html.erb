@@ -1,3 +1,4 @@
+<%= render 'layouts/dashboard_nav' %>
 <div class="row">
   <h1>Sleep Totals</h1>
   <div class="large-5 columns">
@@ -10,26 +11,29 @@
       <%= date.day %>
       <% if @sleeps_by_date[date] %>
         <% @sleeps_by_date[date].each do |sleep| %>
-          <%= content_tag :span, "#{date.day}", :data => { :tooltip => "" }, class: 'has-tip overlay', title: "#{sleep.hours} hours" %>
+          <%= content_tag :span, "#{sleep.sleep_date.strftime("%e")}", :data => { :tooltip => "" }, class: 'has-tip overlay', title: "#{sleep.hours} hours" %>
         <% end %>
       <% end %>
     <% end %>
 
 
-    <% @sleeps.each do |sleep| %>
+    <%# @sleeps.each do |sleep| %>
 
-        <h3><%= sleep.sleep_date.strftime("%B %Y") %></h3>
-        <h5><%= sleep.hours %> hours of sleep</h5>
-    <% end %>
+        <!--h3><%#= sleep.sleep_date.strftime("%B %e %Y") %></h3>
+        <h5><%#= sleep.hours %> hours of sleep</h5!-->
+    <%# end %>
   </div>
   <div class="large-7 columns">
-    <canvas id="sleepChart"></canvas>
+    <canvas id="sleepChart" width="500" height="415"></canvas>
   </div>
 
 </div>
+<div class="row">
+  <p><%= @total_average_sleep_time %></p>
+  <p><%= @current_month_average_sleep_time %></p>
+</div>
 
-<p><%= @total_average_sleep_time %></p>
-<p><%= @monthly_average_sleep_time %></p>
+
 
 <%= javascript_include_tag 'application' %>
 <%= javascript_include_tag sleeps_path %>
