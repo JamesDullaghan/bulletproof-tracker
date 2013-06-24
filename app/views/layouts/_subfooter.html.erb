@@ -1,19 +1,29 @@
 <nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><%= link_to 'Grassfed Tracker', root_path %></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+
   <section class="top-bar-section">
     <!-- Left Nav Section -->
-    <ul class="left">
+    <ul class="right">
+    <% if !user_signed_in? %>
       <li class="has-form">
-        <%= link_to root_path, class: 'button radius' do %>
+        <%= link_to user_omniauth_authorize_path(:twitter), class: 'button radius' do %>
           <i class="social foundicon-twitter menu-icon"></i>
           <span>Twitter</span>
         <% end %>
       </li>
-      <li class="has-form">
+<!--         <li class="has-form">
         <%= link_to root_path, class: 'button radius' do %>
           <i class="social foundicon-facebook menu-icon"></i>
           <span>Facebook</span>
         <% end %>
-      </li>
+      </li> -->
       <li class="has-form">
         <%= link_to new_user_registration_path, class: 'button radius' do %>
           <i class="general foundicon-heart menu-icon"></i>
@@ -26,6 +36,14 @@
           <span>Login</span>
         <% end %>
       </li>
+    <% else %>
+      <li class="has-form">
+        <%= link_to destroy_user_session_path, class: 'button radius', method: :delete do %>
+          <i class="general foundicon-unlock menu-icon"></i>
+          <span>Logout</span>
+        <% end %>
+      </li>
+    <% end %>
     </ul>
   </section>
 </nav>

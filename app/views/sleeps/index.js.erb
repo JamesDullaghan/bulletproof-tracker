@@ -7,15 +7,14 @@ var sleepChartData = {
       pointColor : "rgba(245,143,79,1)",
       pointStrokeColor : "rgba(245,143,79,1)",
       data : <%= @total_sleep_array %>
+    },
+    {
+      fillColor : "rgba(226,91,35,.5)",
+      strokeColor : "rgba(245,143,79,1)",
+      pointColor : "rgba(245,143,79,1)",
+      pointStrokeColor : "rgba(245,143,79,1)",
+      data : <%= @current_month_sleep_array %>
     }
-    //,{
-    //   label: 'Hours: ',
-    //   fillColor : "rgba(226,91,35,.5)",
-    //   strokeColor : "rgba(245,143,79,1)",
-    //   pointColor : "rgba(245,143,79,1)",
-    //   pointStrokeColor : "rgba(245,143,79,1)",
-    //   data : <%= @current_month_sleep_array %>
-    // }
   ]
 }
 

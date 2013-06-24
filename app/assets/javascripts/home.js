@@ -1,5 +1,5 @@
   var barChartData = {
-    labels : ["Jan.","Feb.","Mar.","Apr.","May","June","July"],
+    labels : ["Jan","Feb","Mar","Apr","May","Jun","Jul"],
     datasets : [
       {
         fillColor : "rgba(222,80,0,0.5)",
@@ -34,14 +34,17 @@ var myBarExample = new Chart(bce).Bar(barChartData, barChartOptions);
 // Pie chart data
 var pieChartData = [
   {
+    label: 'Fats',
     value: 90,
     color:"#F27620"
   },
   {
+    label: 'Proteins',
     value : 54,
     color : "#DE5200"
   },
   {
+    label: 'Carbs',
     value : 36,
     color : "#39393B"
   }
@@ -55,14 +58,17 @@ var myPieExample = new Chart(pce).Pie(pieChartData);
 // Doughnut Chart
 var doughnutChartData = [
   {
+    label: 'Sleep',
     value: 120,
     color:"#39393B"
   },
   {
+    label: 'Excercise',
     value : 120,
     color : "#DE5200"
   },
   {
+    label: 'Work',
     value : 120,
     color : "#F27620"
   }

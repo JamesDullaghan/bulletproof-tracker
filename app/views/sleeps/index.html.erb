@@ -1,6 +1,13 @@
 <%= render 'layouts/dashboard_nav' %>
 <div class="row">
-  <h1>Sleep Totals</h1>
+  <div class="large-6 columns">
+    <h1>Sleep Totals</h1>
+  </div>
+  <div class="large-6 columns">
+    <%= link_to 'Add Sleep Record', new_sleep_path, class: 'button radius' %>
+  </div>
+</div>
+<div class="row">
   <div class="large-5 columns">
     <h3 class="month">
       <%= link_to "<", date: @date.prev_month, class: 'cal-larr' %>
@@ -29,8 +36,10 @@
 
 </div>
 <div class="row">
-  <p><%= @total_average_sleep_time %></p>
-  <p><%= @current_month_average_sleep_time %></p>
+  <div class="large-5 columns panel">
+    <p><%= @total_average_sleep_time %></p>
+    <p>Your aver<%= @date.strftime("%B") %>'s average sleep time: <%= @current_month_average_sleep_time %> hours</p>
+  </div>
 </div>
 
 
