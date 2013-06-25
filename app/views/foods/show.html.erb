@@ -16,6 +16,4 @@
   <%= render 'foods/show_recipes' %>
 </div>
 
-
-<%= javascript_include_tag 'application' %>
-<%= javascript_include_tag food_path(@food.id) %>
+<%= javascript food_path(@food.id) %>
