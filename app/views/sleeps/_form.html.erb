@@ -9,25 +9,19 @@
   <% end %>
 
   <div class="row collapse">
-    <div class="large-2 columns">
-      <%= f.label :sleep_date, "Sleep Date" %>
-    </div>
     <div class="large-4 columns end">
       <%= f.date_select(:sleep_date) %>
     </div>
   </div>
 
   <div class="row collapse">
-    <div class="large-2 columns">
-      <%= f.label :hours, "Hours slept" %>
-    </div>
-    <div class="large-4 columns end">
+    <div class="large-3 columns end">
       <%= f.text_field :hours %>
     </div>
   </div>
   <div class="row collapse">
-    <div class="large-6 columns">
-      <%= f.submit 'Add Sleep', class: 'button radius right' %>
+    <div class="large-4 columns">
+      <%= f.submit 'Add Sleep', class: 'button' %>
     </div>
   </div>
 <% end %>

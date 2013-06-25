@@ -1,4 +1,13 @@
 <%= render 'layouts/dashboard_nav' %>
+<div role="navigation" id="nav">
+  <ul>
+    <li class="active"><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Dashboard', dashboard_url %></li>
+    <li><%= link_to 'Foods', foods_url %></li>
+    <li><%= link_to 'Sleep', sleeps_url %></li>
+    <li><%= link_to 'Excercise', root_path %></li>
+  </ul>
+</div>
 <div class="row">
   <h1>Dashboard</h1>
 

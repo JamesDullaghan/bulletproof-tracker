@@ -4,7 +4,7 @@
     <h1>Sleep Totals</h1>
   </div>
   <div class="large-6 columns">
-    <%= link_to 'Add Sleep Record', new_sleep_path, class: 'button radius success' %>
+    <%= link_to 'Add Sleep Record', new_sleep_path, class: 'button success' %>
   </div>
 </div>
 <div class="row">
@@ -34,10 +34,11 @@
     <canvas id="sleepChart" width="500" height="415"></canvas>
   </div>
 </div>
-<div class="row">
-  <div class="large-5 columns panel">
+<div class="row panel">
+  <div class="large-5 columns">
   <% @sleep_months.each do |month, sleep| %>
-    <ul><%= month.strftime("%B") %>
+    <ul class="inline-list">
+      <h5><%= month.strftime("%B") %></h5>
     <% for sleeps in sleep %>
       <li><%= sleeps.hours %></li>
     <% end %>

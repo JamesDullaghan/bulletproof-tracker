@@ -46,7 +46,7 @@ $secondary-color: #f6f6f6;
 $tertiary-color: #F27620;
 $quartinary-color: #39393B;
 $alert-color: #c60f13;
-$success-color: #5da423;
+$success-color: #87C468;
 
 // Make sure border radius matches unless we want it different.
 
@@ -1163,7 +1163,7 @@ $topbar-bg: #39393B;
 
 // Height and margin
 
-$topbar-height: 75px;
+$topbar-height: 70px;
 $topbar-margin-bottom: emCalc(0px);
 
 // Input height for top bar
@@ -1203,7 +1203,7 @@ $topbar-title-weight: normal;
 
 // Transitions and breakpoint styles
 
-// $topbar-transition-speed: 300ms;
+$topbar-transition-speed: 800ms;
 $topbar-breakpoint: emCalc(1005px); // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width: "#{$topbar-breakpoint}")";
 
