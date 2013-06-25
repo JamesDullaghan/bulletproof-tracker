@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require chart
-//= require_tree .
+//= require parsley
 
 $(function(){ $(document).foundation(); });

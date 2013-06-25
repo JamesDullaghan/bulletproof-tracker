@@ -183,8 +183,8 @@ $subheader-font-weight: 100;
 
 $hr-border-width: 1px;
 $hr-border-style: solid;
-$hr-border-color: $secondary-color;
-$hr-margin: emCalc(30px);
+$hr-border-color: darken($secondary-color, 10%);
+$hr-margin: emCalc(15px);
 
 // Lists
 

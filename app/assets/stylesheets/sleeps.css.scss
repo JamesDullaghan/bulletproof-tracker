@@ -4,7 +4,7 @@ $secondary-color: #F6F6F6;
 .month {
   font-family: 'Helvetica Neue';
   font-weight: 100;
-  background: lighten($primary-color, 5%);
+  background: $primary-color;
   font-size: 28px;
   letter-spacing: 4px;
   text-align: center;
@@ -12,9 +12,9 @@ $secondary-color: #F6F6F6;
   margin-bottom: 0;
   color: lighten($secondary-color, 10%);
   a {
-    color: darken($secondary-color, 20%);
+    color: darken($primary-color, 10%);
     &:hover {
-      color: $primary-color;
+      color: darken($primary-color, 10%);
       transition: 0.8s ease-in-out;
     }
   }
@@ -79,7 +79,11 @@ $secondary-color: #F6F6F6;
 
 .overlay {
   position: absolute;
-  right: 17px;
+  top: 8px;
+  height: 7px;
+  width: 7px;
+  border-radius: 14px;
+  background-color: $primary-color;
 }
 
 #sleepChart {

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -27,11 +28,13 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'will_paginate', '~> 3.0.1'
 gem 'pg_search'
-gem 'foundation_rails_helper'
+gem 'foundation_rails_helper', :git => 'git://github.com/sgruhier/foundation_rails_helper.git'
+gem 'parsley-rails'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'hirb'
 end
 
 

@@ -1,6 +1,10 @@
 module ApplicationHelper
   include FoundationRailsHelper::FlashHelper
 
+  def javascript(*files)
+    content_for(:head) { javascript_include_tag(*files) }
+  end
+
   def sortable(column, title = nil)
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
