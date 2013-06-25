@@ -1,0 +1,1 @@
+$(function(){$("#foods th a, #foods .pagination a").on("click",function(){return $.getScript(this.href),!1}),$("#foods_search input").keyup(function(){return $.get($("#foods_search").attr("action"),$("#foods_search").serialize(),null,"script"),!1})});
