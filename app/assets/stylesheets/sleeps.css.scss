@@ -21,70 +21,84 @@ $secondary-color: #F6F6F6;
 }
 
 [role="main"] {
-  overflow: hidden;
-  padding: 15px;
-  background: white;
+  padding: 0;
+}
+.calendar {
+  margin: 0;
 }
 
-.calendar {
-  margin: 0 5%;
-  ul {
-    list-style-type: none;
-    li {
-      position: relative;
-      display: inline-block;
-      float: left;
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      zoom: 1;
-      *display: inline;
-      &:hover {
-        background-color: $secondary-color;
+@media only screen and (min-width: 768px) {
+  [role="main"] {
+    overflow: hidden;
+    padding: 15px;
+    background: white;
+  }
+  .calendar {
+    margin: 0 5%;
+    ul {
+      list-style-type: none;
+      li {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        zoom: 1;
+        *display: inline;
+        &:hover {
+          background-color: $secondary-color;
+        }
       }
     }
   }
-}
-
-.day-row {
-  color: $primary-color;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 10px;
-}
-
-.day {
-  &:hover {
-    background-color: white !important;
+  .day-row {
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
   }
-}
+  .day {
+    &:hover {
+      background-color: white !important;
+    }
+  }
+  .today {
+    background-color: $primary-color;
+    color: white;
+    &:hover {
+      color: #555;
+      transition: 0.8s ease-in-out;
+    }
+  }
 
-.today {
-  background-color: $primary-color;
-  color: white;
-  &:hover {
+  .week-row {
     color: #555;
-    transition: 0.8s ease-in-out;
+    font-size: 14px;
+  }
+  .not-month {
+    color: #bababa;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 8px;
+    height: 7px;
+    width: 7px;
+    border-radius: 14px;
+    background-color: $primary-color;
   }
 }
 
-.week-row {
-  color: #555;
-  font-size: 14px;
-}
-.not-month {
-  color: #bababa;
-}
 
-.overlay {
-  position: absolute;
-  top: 8px;
-  height: 7px;
-  width: 7px;
-  border-radius: 14px;
-  background-color: $primary-color;
-}
+
+
+
+
+
+
+
 
 #sleepChart {
   margin-left: 15px;

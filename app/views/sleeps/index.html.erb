@@ -17,7 +17,7 @@
       <%= date.day %>
       <% if @sleeps_by_date[date] %>
         <% @sleeps_by_date[date].each do |sleep| %>
-          <%= content_tag :span, " ", :data => { :tooltip => "" }, class: 'has-tip overlay', title: "#{sleep.hours} hours" %>
+          <%= content_tag :span, " ", :data => { :tooltip => "" }, class: 'has-tip overlay', title: "#{sleep.hours} hours of sleep for the #{sleep.sleep_date.day.ordinalize}" %>
         <% end %>
       <% end %>
     <% end %>
@@ -39,7 +39,8 @@
     <ul class="inline-list">
       <h5><%= month.strftime("%B") %></h5>
     <% for sleeps in sleep %>
-      <li><%= sleeps.hours %></li>
+      <li><%= sleeps.sleep_date.strftime("%B #{sleeps.sleep_date.day.ordinalize}") %></li>
+      <li><%= sleeps.hours %> Hours</li>
     <% end %>
     </ul>
   <% end %>
