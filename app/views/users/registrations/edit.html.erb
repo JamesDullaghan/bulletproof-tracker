@@ -1,13 +1,19 @@
-<%= render 'layouts/dashboard_nav' %>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name,
+                       :url => registration_path(resource_name),
+                       :html => { :method => :put,
+                                  :data => { :validate => 'parsley',
+                                             :focus => 'first' } }) do |f| %>
 
   <div class="row collapse">
     <div class="large-6 large-offset-3 columns">
         <h3>Edit <%= resource_name.to_s.humanize %></h3>
 
-        <%= f.text_field :username, :autofocus => true%>
+        <%= f.text_field :username, :autofocus => true,
+                                    :class => 'required',
+                                    :required => true,
+                                    :minlength => 3,
+                                    :maxlength => 24,
+                                    :trigger => 'keyup' %>
 
         <%= f.email_field :email %>
 
@@ -22,7 +28,13 @@
 
         <% if f.object.encrypted_password.present? %>
           <i></i>
-          <%= f.password_field :current_password, placeholder: '(we need your current password to confirm your changes)' %>
+          <%= f.password_field :current_password,
+                               :placeholder => '(we need your current password to confirm your changes)',
+                               :class => 'required',
+                               :data => { :required => true,
+                                          :minlength => 8,
+                                          :maxlength => 24,
+                                          :trigger => 'keyup' } %>
         <% end %>
         <%= f.submit "Update", class: 'button success radius' %>
 

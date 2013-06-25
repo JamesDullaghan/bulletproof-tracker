@@ -2,6 +2,6 @@ class Sleep < ActiveRecord::Base
   attr_accessible :hours, :user_id, :sleep_date
 
   belongs_to :user
-  validates :sleep_date, :uniqueness => true
+  validates_uniqueness_of :sleep_date, :scope => :user_id
 
 end
