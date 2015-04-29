@@ -17,6 +17,7 @@ gem 'foundation_rails_helper', :git => 'git://github.com/sgruhier/foundation_rai
 gem 'parsley-rails'
 
 group :development do
+  gem 'thin'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'hirb'
