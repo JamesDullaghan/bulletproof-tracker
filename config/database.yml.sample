@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: <%= ENV[POSTGRES_USERNAME] %>
+  password: <%= ENV[POSTGRES_PASSWORD] %>
+
+development:
+  <<: *default
+  database: <%= ENV[DEVELOPMENT_DATABASE_NAME] %>
+
+test:
+  <<: *default
+  database: <%= ENV[TEST_DATABASE_NAME] %>
+
+production:
+  <<: *default
+  database: <%= ENV[PRODUCTION_DATABASE_NAME] %>

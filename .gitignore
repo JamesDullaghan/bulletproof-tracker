@@ -41,3 +41,5 @@ test/css/styles.css
 docs/public/*
 *.scssc
 public/system/*
+config/*.yml
+.ruby-version
