@@ -1,15 +1,13 @@
 class SleepsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-
-    # Sleep.all for current_user
-    @sleeps = current_user.sleeps
     sleep_date = Date.today
     # Sleep grouped by month in hash
     @sleep_months = @sleeps.group_by { |s| s.sleep_date.beginning_of_month }.sort { |a,b| a[0] <=> b[0] }
     # Sleep grouped for use in calendar helper
-    @sleeps_by_date = @sleeps.group_by(&:sleep_date)
+    # @todo move to helper method
+    sleeps_by_date = sleeps.grouped_by_date
     # Date used in calendar and month range
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @year_range = @sleeps.where(:sleep_date => sleep_date.beginning_of_year..sleep_date.end_of_year)
@@ -50,31 +48,48 @@ class SleepsController < ApplicationController
   end
 
   def update
-    @sleep = current_user.sleeps.find(params[:id])
-    respond_to do |format|
-      if @sleep.update_attributes(params[:sleep])
-        format.html { redirect_to sleeps_url, notice: 'Sleep was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    sleep.attributes = permitted_params
+    if sleep.save
+      redirect_to sleeps_url, notice: 'Sleep was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
-    @sleep = current_user.sleeps.find(params[:id])
-    @sleep.destroy
-    respond_to do |format|
-      format.html { redirect_to sleeps_url }
-    end
+    sleep.destroy
+    redirect_to sleeps_url
   end
 
-  # def median(array)
-  #   if array.empty?
-  #     current_user.sleeps.new
-  #   else
-  #     sorted = array.sort
-  #     len = sorted.length
-  #     return (sorted[(len - 1) / 2] + sorted[len / 2]) / 2.0
-  #   end
-  # end
+  private
+
+  # whitelisted parameters
+  #
+  # @return [ActionController::Parameters]
+  def permitted_params
+    params.require(:sleep).permit(:user_id, :hour, :sleep_date)
+  end
+
+  # Memoized current user
+  #
+  # @return [ActiveRecord::Relation<User>]
+  def user
+    @user ||= current_user
+  end
+
+  # A users sleeps
+  #
+  # @return [ActiveRecord::Collection<Sleep>]
+  def sleeps
+    user.sleeps
+  end
+
+  # A sleep
+  #
+  # @return [ActiveRecord::Relation<Sleep>]
+  def sleep
+    sleeps.find_or_initialize_by(id: params.fetch(:id, nil))
+  end
+
+  helper_method :user, :sleeps, :sleep
 end
