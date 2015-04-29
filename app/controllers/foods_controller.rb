@@ -79,5 +79,8 @@ class FoodsController < ApplicationController
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
-  helper_method :sort_column, :sort_direction, :food
+  helper_method :food,
+                :foods,
+                :sort_column,
+                :sort_direction
 end
