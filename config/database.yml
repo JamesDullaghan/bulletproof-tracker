@@ -2,17 +2,17 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username:
+  username: james
   password:
 
 development:
   <<: *default
-  database:
+  database: bulletproof_development
 
 test:
   <<: *default
-  database:
+  database: bulletproof_test
 
 production:
   <<: *default
-  database:
+  database: bulletproof_production
