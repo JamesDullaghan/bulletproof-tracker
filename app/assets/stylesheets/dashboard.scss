@@ -1,14 +1,20 @@
-#nav ul {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: block;
-  list-style: none;
-}
+#nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+  }
 
-#nav li {
-  width: 100%;
-  display: block;
+  li {
+    width: 100%;
+    display: block;
+  }
+
+  &.opened {
+    max-height: 9999px;
+  }
 }
 
 .js #nav {
@@ -20,17 +26,15 @@
   zoom: 1;
 }
 
-#nav.opened {
-  max-height: 9999px;
-}
-
 @media screen and (min-width: 40em) {
   .js #nav {
     position: relative;
   }
+
   .js #nav.closed {
     max-height: none;
   }
+
   #nav-toggle {
     display: none;
   }

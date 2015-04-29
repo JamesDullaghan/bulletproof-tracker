@@ -11,6 +11,7 @@ $secondary-color: #F6F6F6;
   padding: 10px 0;
   margin-bottom: 0;
   color: lighten($secondary-color, 10%);
+
   a {
     color: darken($primary-color, 10%);
     &:hover {
@@ -23,6 +24,7 @@ $secondary-color: #F6F6F6;
 [role="main"] {
   padding: 0;
 }
+
 .calendar {
   margin: 0;
 }
@@ -35,8 +37,10 @@ $secondary-color: #F6F6F6;
   }
   .calendar {
     margin: 0 5%;
+
     ul {
       list-style-type: none;
+
       li {
         position: relative;
         display: inline-block;
@@ -47,26 +51,32 @@ $secondary-color: #F6F6F6;
         line-height: 50px;
         zoom: 1;
         *display: inline;
+
         &:hover {
           background-color: $secondary-color;
         }
       }
     }
   }
+
   .day-row {
     color: $primary-color;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 10px;
   }
+
   .day {
+
     &:hover {
       background-color: white !important;
     }
   }
+
   .today {
     background-color: $primary-color;
     color: white;
+
     &:hover {
       color: #555;
       transition: 0.8s ease-in-out;
@@ -77,6 +87,7 @@ $secondary-color: #F6F6F6;
     color: #555;
     font-size: 14px;
   }
+
   .not-month {
     color: #bababa;
   }
