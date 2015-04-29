@@ -1,8 +1,14 @@
 class DashboardController < ApplicationController
-
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
+
+  private
+
+  def date
+    Date.parse(params.fetch(:date, Date.today))
+  end
+
+  helper_method :date
 end
