@@ -42,26 +42,33 @@
   padding: 0px !important;
 }
 
-
-
 .home-icon {
   position: absolute;
   font-size: 128px;
+
+  &.first {
+    position: relative;
+    top: 80px;
+    color: #fff;
+  }
+
+  &.second {
+    position: relative;
+    top: 17px;
+    right: 35px;
+    color: #F27620;
+  }
 }
-.home-icon.first {
-  position: relative;
-  top: 80px;
-  color: #fff;
-}
-.home-icon.second {
-  position: relative;
-  top: 17px;
-  right: 35px;
-  color: #F27620;
-}
+// .home-icon.first {
+
+// }
+// .home-icon.second {
+
+// }
 
 .keypoint-collection {
   margin: 15px 0px;
+
   .keypoint {
     padding: 30px 45px;
   }
@@ -71,6 +78,7 @@
   .keypoint-collection {
     margin: 55px 0;
   }
+
   .keypoint {
     padding: 65px 45px;
   }

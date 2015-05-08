@@ -1,14 +1,10 @@
 class User < ActiveRecord::Base
-
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  has_many :sleeps, dependent: :destroy
 
-  has_many :sleeps, :dependent => :destroy
-
-  validates_presence_of :username
-  validates_uniqueness_of :username
+  validates :username, presence: true, uniqueness: true
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -34,10 +30,6 @@ class User < ActiveRecord::Base
   end
 
   def update_with_password(params, *options)
-    if encrypted_password.blank?
-      update_attributes(params, *options)
-    else
-      super
-    end
+    encrypted_password.blank? ? update_attributes(params, *options) : super
   end
 end

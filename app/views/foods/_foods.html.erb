@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @foods.each do |food| %>
+      <% foods.each do |food| %>
       <tr>
         <td><%= link_to food.name.capitalize, food_path(food) %></td>
         <td><%= food.category.capitalize.pluralize %></td>
@@ -24,4 +24,4 @@
       <% end %>
     </tbody>
   </table>
-  <%= will_paginate @foods %>
+  <%= will_paginate foods %>

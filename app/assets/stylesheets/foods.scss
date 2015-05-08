@@ -7,6 +7,7 @@ $darkgrey: #292b30;
 .key-section {
   padding: 10px 20px;
 }
+
 .key {
   float: right;
   width: 25px;
@@ -16,6 +17,7 @@ $darkgrey: #292b30;
   overflow: hidden;
   display: inline-block;
   margin: 0 10px 10px 0;
+
   &:before {
     display: block;
     background: #f00;
@@ -31,11 +33,13 @@ $darkgrey: #292b30;
     border-color: #F27620 #D75E0D;
   }
 }
+
 .protein {
   &:before {
     border-color: #DE5200 #B24300;
   }
 }
+
 .carb {
   &:before {
     border-color: #39393B #323234;
